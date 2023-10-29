@@ -5,18 +5,19 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Note")
-class Note {
+data class Note(
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null
+    val id: Int? = null,
 
     @ColumnInfo(name = "title")
-    private val title: String? = null
+    private val title: String? = null,
 
     @ColumnInfo(name = "content")
-    private val content: String? = null
+    private val content: String? = null,
 
     @ColumnInfo(name = "timestamp")
-    private val timestamp: String? = null
+    private val timestamp: String? = null,
+) {
 
     override fun equals(other: Any?): Boolean {
         if (other == null) return false
@@ -24,4 +25,5 @@ class Note {
         if (title == other.title && content == other.content && id == other.id) return true
         return false
     }
+
 }
